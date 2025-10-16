@@ -1,83 +1,73 @@
 /*
-ODOT Branded JupyterLab Interface Theme (UI only)
-- Menu/title bars: Zephyr Green (darker on title bar)
-- Main surfaces: neutral greys (unchanged notebook/content styling)
-- Accents: Tech Blue for actionable highlights
-*/
+ * ODOT Self-Contained Dark Theme - Immersive Green
+ * This version uses a green monochrome palette for all UI surfaces.
+ */
 
 :root {
-  /* Layout (neutral greys for main surfaces) */
-  --jp-layout-color0: #002d24;  /* canvas/lowest (dark green) */
-  --jp-layout-color1: #00362c;  /* main background (dark green) */
-  --jp-layout-color2: #005a47;  /* toolbars/menus (Zephyr tone) */
-  --jp-layout-color3: #00493a;  /* title bars (darker Zephyr) */
-  --jp-layout-color4: #0f4a3d;  /* subtle highlights (dark green) */
+  /* Core Layout Colors - All shades of ODOT Zephyr Green */
+  --jp-layout-color0: #001a14; /* Darkest Green for canvas background */
+  --jp-layout-color1: #002d24; /* Dark Green for main panels, notebook background */
+  --jp-layout-color2: #005a47; /* Medium Green for toolbars and borders */
+  --jp-layout-color3: #00855B; /* Bright Green (Accessible) for menus and active items */
+  --jp-layout-color4: #009969; /* Brightest Green for highlights */
 
-  /* Brand palettes */
-  /* Zephyr Green family */
-  --odot-zephyr-0: #00855b;
-  --odot-zephyr-1: #009969;   /* primary green */
-  --odot-zephyr-2: #33ab87;
-  --odot-zephyr-3: #66bda5;
+  /* Fonts & Text */
+  --jp-ui-font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+  --jp-content-font-family: 'Source Sans 3', sans-serif;
+  --jp-code-font-family: 'Fira Code', 'JetBrains Mono', Menlo, Consolas, 'DejaVu Sans Mono', monospace;
+  --jp-ui-font-size1: 13px;
+  --jp-content-font-size1: 14px;
+  --jp-code-font-size: 13px;
+  --jp-code-line-height: 1.4;
+  --jp-content-line-height: 1.6;
 
-  /* Tech Blue family (for actionable accents, new/console, links) */
-  --odot-blue-0: #006a99;
-  --odot-blue-1: #0098d3;     /* primary blue */
-  --odot-blue-2: #33abdc;
-  --odot-blue-3: #69c2c6;
+  /* Text Colors */
+  --jp-ui-font-color0: rgba(255, 255, 255, 1);
+  --jp-ui-font-color1: rgba(255, 255, 255, 0.9);
+  --jp-ui-font-color2: rgba(255, 255, 255, 0.7);
+  --jp-ui-font-color3: rgba(255, 255, 255, 0.5);
+  --jp-content-font-color0: var(--jp-ui-font-color0);
+  --jp-content-font-color1: var(--jp-ui-font-color1);
+  --jp-content-font-color2: var(--jp-ui-font-color2);
+  --jp-content-font-color3: var(--jp-ui-font-color3);
+  --jp-content-link-color: #69C2C6; /* Aqua Blue for links */
 
-  /* Map to Jupyter tokens */
-  --jp-brand-color0: var(--odot-zephyr-0);
-  --jp-brand-color1: var(--odot-zephyr-1); /* primary brand */
-  --jp-brand-color2: var(--odot-zephyr-2);
-  --jp-brand-color3: var(--odot-zephyr-3);
-  --jp-brand-color4: #b0b3af;
+  /* Brand and Accent Colors */
+  --jp-brand-color1: #009969; /* Zephyr Green */
+  --jp-accent-color1: #0098D3; /* Tech Blue */
 
-  --jp-accent-color0: var(--odot-blue-0);
-  --jp-accent-color1: var(--odot-blue-1);
-  --jp-accent-color2: var(--odot-blue-2);
-  --jp-accent-color3: var(--odot-blue-3);
-
-  /* Text */
-  --jp-ui-font-color0: rgba(255,255,255,1);
-  --jp-ui-font-color1: rgba(255,255,255,0.87);
-  --jp-ui-font-color2: rgba(255,255,255,0.54);
-  --jp-ui-font-color3: rgba(255,255,255,0.38);
-
-
-  /* Links (UI/menus, not notebook content rules) */
-  --jp-content-link-color: var(--odot-blue-1);
-
-  /* Fonts */
-
-
-  /* Borders (neutral) */
+  /* Borders */
   --jp-border-width: 1px;
-  --jp-border-color0: #003027;
-  --jp-border-color1: #083a31;
-  --jp-border-color2: #145246;
-  --jp-border-color3: #1c6a5a;
+  --jp-border-color0: var(--jp-layout-color2);
+  --jp-border-color1: var(--jp-layout-color2);
+  --jp-border-color2: var(--jp-layout-color3);
+  --jp-border-color3: var(--jp-layout-color4);
   --jp-border-radius: 2px;
 
-  /* States */
-  --jp-state-hover-color: rgba(0,153,105,0.10);   /* green-tinted hover for menus/toolbars */
-  --jp-state-active-color: rgba(0,153,105,0.16);
-  --jp-state-selected-color: rgba(0,153,105,0.20);
+  /* Interactive States */
+  --jp-state-hover-color: rgba(255, 255, 255, 0.08);
+  --jp-state-active-color: rgba(255, 255, 255, 0.12);
+  --jp-state-selected-color: var(--jp-layout-color3); /* Bright Green for selections */
   --jp-state-checked-color: var(--jp-brand-color1);
 
-  /* Statusbar/tools (keep within Zephyr family) */
-  --jp-statusbar-background-color: #00493a;
+  /* Notebook and Cells */
+  --jp-notebook-padding: 10px;
+  --jp-cell-padding: 8px;
+  --jp-cell-background: var(--jp-layout-color1);
+  --jp-cell-editor-background: var(--jp-layout-color0);
+  --jp-cell-editor-border-color: var(--jp-layout-color2);
+  --jp-cell-editor-active-border-color: var(--jp-brand-color1);
+  --jp-cell-in-prompt-color: var(--jp-accent-color1); /* Tech Blue for prompts */
+  --jp-cell-out-prompt-color: #C12637; /* Cardinal Red */
 
-  /* Alerts */
-  --jp-warn-color0: #a67000;
-  --jp-warn-color1: #eba70e;
-  --jp-error-color0: #8c1515;
-  --jp-error-color1: #c12637;
-  --jp-success-color0: var(--odot-zephyr-0);
-  --jp-success-color1: var(--odot-zephyr-1);
+  /* Other component colors */
+  --jp-warn-color1: #EBA70E;
+  --jp-error-color1: #C12637;
+  --jp-success-color1: #BBD36F; /* Pawpaw Green */
+  --jp-info-color1: #0098D3;
+  --jp-editor-cursor-color: var(--jp-ui-font-color0);
+  --jp-editor-selected-background: var(--jp-layout-color2);
+  --jp-statusbar-background-color: var(--jp-layout-color2);
+  --jp-menubar-background: var(--jp-layout-color3);
+  --jp-toolbar-background: var(--jp-layout-color2);
 }
-
-/* NOTE:
-- Removed notebook/cell/editor-specific overrides (backgrounds, prompts).
-- This theme now targets interface chrome only: menus, title bars, toolbars, sidebars.
-*/

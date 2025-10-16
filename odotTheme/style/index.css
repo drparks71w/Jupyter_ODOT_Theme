@@ -1,21 +1,57 @@
-/*-----------------------------------------------------------------------------
-| Copyright (c) Jupyter Development Team.
-| Distributed under the terms of the Modified BSD License.
-|----------------------------------------------------------------------------*/
-
-/* Import our variable overrides first */
+/*
+ * This file is a self-contained copy of the default JupyterLab dark theme.
+ * It imports only the local variables file.
+ */
 @import './variables.css';
 
-/* Set the default typography for monospace elements */
-tt,
-code,
-kbd,
-samp,
-pre {
-  font-family: var(--jp-code-font-family);
-  font-size: var(--jp-code-font-size);
-  line-height: var(--jp-code-line-height);
+/* General typography */
+.jp-RenderedHTMLCommon,
+.jp-MarkdownOutput {
+  font-family: var(--jp-content-font-family);
+  font-size: var(--jp-content-font-size1);
+  line-height: var(--jp-content-line-height);
 }
+.jp-RenderedHTMLCommon a,
+.jp-MarkdownOutput a {
+  color: var(--jp-content-link-color);
+}
+.jp-RenderedHTMLCommon h1, .jp-MarkdownOutput h1 { font-size: 2em; }
+.jp-RenderedHTMLCommon h2, .jp-MarkdownOutput h2 { font-size: 1.5em; }
+.jp-RenderedHTMLCommon h3, .jp-MarkdownOutput h3 { font-size: 1.17em; }
+.jp-RenderedHTMLCommon h4, .jp-MarkdownOutput h4 { font-size: 1em; }
+.jp-RenderedHTMLCommon h5, .jp-MarkdownOutput h5 { font-size: 0.83em; }
+.jp-RenderedHTMLCommon h6, .jp-MarkdownOutput h6 { font-size: 0.67em; }
+.jp-RenderedHTMLCommon code, .jp-MarkdownOutput code {
+  font-family: var(--jp-code-font-family);
+  font-size: 0.875em;
+  padding: 0.1em 0.2em;
+  background-color: var(--jp-layout-color0);
+  border-radius: var(--jp-border-radius);
+}
+.jp-RenderedHTMLCommon pre, .jp-MarkdownOutput pre {
+  font-family: var(--jp-code-font-family);
+  font-size: 0.875em;
+  padding: 10px;
+  background: var(--jp-layout-color0);
+  border-radius: var(--jp-border-radius);
+  overflow-x: auto;
+}
+.jp-Notebook .jp-Cell {
+  padding: var(--jp-cell-padding);
+}
+.jp-Notebook .jp-CodeCell .jp-Cell-inputWrapper {
+  background-color: var(--jp-cell-editor-background);
+  border: var(--jp-border-width) solid var(--jp-cell-editor-border-color);
+}
+.jp-Notebook .jp-CodeCell.jp-mod-active .jp-Cell-inputWrapper {
+  border: var(--jp-border-width) solid var(--jp-cell-editor-active-border-color);
+}
+body {
+  background: var(--jp-layout-color0);
+  color: var(--jp-ui-font-color1);
+}
+
+/* --- Custom Rules Below --- */
 
 /* Replace Jupyter logo with ODOT Zephyr logo */
 #jp-MainLogo {
@@ -27,34 +63,6 @@ pre {
   height: 32px;
   padding: 4px;
 }
-
-/* Hide the default Jupyter SVG logo */
 #jp-MainLogo svg {
   display: none;
-}
-
-/* Fix toolbar buttons to use Tech Blue instead of green */
-.jp-Toolbar-item .jp-ToolbarButtonComponent {
-  color: var(--jp-ui-font-color1);
-}
-
-.jp-Toolbar-item .jp-ToolbarButtonComponent:hover {
-  background-color: rgba(0, 152, 211, 0.1); /* Tech Blue hover */
-}
-
-.jp-Toolbar-item .jp-ToolbarButtonComponent.jp-mod-highlighted {
-  background-color: rgba(0, 152, 211, 0.2); /* Tech Blue active */
-  color: #0098D3; /* Tech Blue text */
-}
-
-/* Specifically target the New Launcher and Console buttons */
-button[title*="New Launcher"],
-button[title*="New Console"],
-.jp-AddIcon {
-  color: #0098D3 !important; /* Tech Blue */
-}
-
-button[title*="New Launcher"]:hover,
-button[title*="New Console"]:hover {
-  background-color: rgba(0, 152, 211, 0.15) !important;
 }
