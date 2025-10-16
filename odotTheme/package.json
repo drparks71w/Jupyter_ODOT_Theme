@@ -1,0 +1,68 @@
+{
+  "name": "odotTheme",
+  "version": "0.1.0",
+  "description": "An ODOT branded Jupyter lab theme for engineering and data science work",
+  "keywords": [
+    "jupyter",
+    "jupyterlab",
+    "jupyterlab-extension"
+  ],
+  "homepage": "https://github.com/drparks71w/Jupyter_ODOT_Theme.git",
+  "bugs": {
+    "url": "https://github.com/drparks71w/Jupyter_ODOT_Theme.git/issues"
+  },
+  "license": "BSD-3-Clause",
+  "author": "Dane",
+  "files": [
+    "lib/**/*.{d.ts,eot,gif,html,jpg,js,js.map,json,png,svg,woff2,ttf}",
+    "style/**/*.{css,eot,gif,html,jpg,json,png,svg,woff2,ttf}"
+  ],
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/drparks71w/Jupyter_ODOT_Theme.git.git"
+  },
+  "scripts": {
+    "build": "npm run build:lib && npm run build:labextension:dev",
+    "build:prod": "npm run build:lib && npm run build:labextension",
+    "build:labextension": "jupyter labextension build .",
+    "build:labextension:dev": "jupyter labextension build --development True .",
+    "build:lib": "tsc",
+    "clean": "npm run clean:lib",
+    "clean:lib": "rimraf lib tsconfig.tsbuildinfo",
+    "clean:labextension": "rimraf odotTheme/labextension",
+    "clean:all": "npm run clean:lib && npm run clean:labextension",
+    "eslint": "eslint . --ext .ts,.tsx --fix",
+    "eslint:check": "eslint . --ext .ts,.tsx",
+    "install:extension": "jupyter labextension develop --overwrite .",
+    "prepare": "npm run clean && npm run build:prod",
+    "watch": "run-p watch:src watch:labextension",
+    "watch:src": "tsc -w",
+    "watch:labextension": "jupyter labextension watch ."
+  },
+  "dependencies": {
+    "@jupyterlab/application": "^4.2.0"
+  },
+  "devDependencies": {
+    "@jupyterlab/builder": "^4.2.0",
+    "@jupyterlab/theme-dark-extension": "^4.4.9",
+    "@typescript-eslint/eslint-plugin": "^4.1.0",
+    "@typescript-eslint/parser": "^4.1.0",
+    "eslint": "^7.5.0",
+    "eslint-config-prettier": "^6.10.1",
+    "eslint-plugin-prettier": "^3.1.2",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^1.19.0",
+    "rimraf": "^5.0.5",
+    "typescript": "~4.7.4"
+  },
+  "sideEffects": [
+    "style/*.css"
+  ],
+  "jupyterlab": {
+    "extension": true,
+    "themePath": "style/index.css",
+    "outputDir": "odotTheme/labextension"
+  }
+}

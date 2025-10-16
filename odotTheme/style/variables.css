@@ -1,0 +1,83 @@
+/*
+ODOT Branded JupyterLab Interface Theme (UI only)
+- Menu/title bars: Zephyr Green (darker on title bar)
+- Main surfaces: neutral greys (unchanged notebook/content styling)
+- Accents: Tech Blue for actionable highlights
+*/
+
+:root {
+  /* Layout (neutral greys for main surfaces) */
+  --jp-layout-color0: #002d24;  /* canvas/lowest (dark green) */
+  --jp-layout-color1: #00362c;  /* main background (dark green) */
+  --jp-layout-color2: #005a47;  /* toolbars/menus (Zephyr tone) */
+  --jp-layout-color3: #00493a;  /* title bars (darker Zephyr) */
+  --jp-layout-color4: #0f4a3d;  /* subtle highlights (dark green) */
+
+  /* Brand palettes */
+  /* Zephyr Green family */
+  --odot-zephyr-0: #00855b;
+  --odot-zephyr-1: #009969;   /* primary green */
+  --odot-zephyr-2: #33ab87;
+  --odot-zephyr-3: #66bda5;
+
+  /* Tech Blue family (for actionable accents, new/console, links) */
+  --odot-blue-0: #006a99;
+  --odot-blue-1: #0098d3;     /* primary blue */
+  --odot-blue-2: #33abdc;
+  --odot-blue-3: #69c2c6;
+
+  /* Map to Jupyter tokens */
+  --jp-brand-color0: var(--odot-zephyr-0);
+  --jp-brand-color1: var(--odot-zephyr-1); /* primary brand */
+  --jp-brand-color2: var(--odot-zephyr-2);
+  --jp-brand-color3: var(--odot-zephyr-3);
+  --jp-brand-color4: #b0b3af;
+
+  --jp-accent-color0: var(--odot-blue-0);
+  --jp-accent-color1: var(--odot-blue-1);
+  --jp-accent-color2: var(--odot-blue-2);
+  --jp-accent-color3: var(--odot-blue-3);
+
+  /* Text */
+  --jp-ui-font-color0: rgba(255,255,255,1);
+  --jp-ui-font-color1: rgba(255,255,255,0.87);
+  --jp-ui-font-color2: rgba(255,255,255,0.54);
+  --jp-ui-font-color3: rgba(255,255,255,0.38);
+
+
+  /* Links (UI/menus, not notebook content rules) */
+  --jp-content-link-color: var(--odot-blue-1);
+
+  /* Fonts */
+
+
+  /* Borders (neutral) */
+  --jp-border-width: 1px;
+  --jp-border-color0: #003027;
+  --jp-border-color1: #083a31;
+  --jp-border-color2: #145246;
+  --jp-border-color3: #1c6a5a;
+  --jp-border-radius: 2px;
+
+  /* States */
+  --jp-state-hover-color: rgba(0,153,105,0.10);   /* green-tinted hover for menus/toolbars */
+  --jp-state-active-color: rgba(0,153,105,0.16);
+  --jp-state-selected-color: rgba(0,153,105,0.20);
+  --jp-state-checked-color: var(--jp-brand-color1);
+
+  /* Statusbar/tools (keep within Zephyr family) */
+  --jp-statusbar-background-color: #00493a;
+
+  /* Alerts */
+  --jp-warn-color0: #a67000;
+  --jp-warn-color1: #eba70e;
+  --jp-error-color0: #8c1515;
+  --jp-error-color1: #c12637;
+  --jp-success-color0: var(--odot-zephyr-0);
+  --jp-success-color1: var(--odot-zephyr-1);
+}
+
+/* NOTE:
+- Removed notebook/cell/editor-specific overrides (backgrounds, prompts).
+- This theme now targets interface chrome only: menus, title bars, toolbars, sidebars.
+*/

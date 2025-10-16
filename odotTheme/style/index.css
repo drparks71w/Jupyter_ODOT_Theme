@@ -1,0 +1,60 @@
+/*-----------------------------------------------------------------------------
+| Copyright (c) Jupyter Development Team.
+| Distributed under the terms of the Modified BSD License.
+|----------------------------------------------------------------------------*/
+
+/* Import our variable overrides first */
+@import './variables.css';
+
+/* Set the default typography for monospace elements */
+tt,
+code,
+kbd,
+samp,
+pre {
+  font-family: var(--jp-code-font-family);
+  font-size: var(--jp-code-font-size);
+  line-height: var(--jp-code-line-height);
+}
+
+/* Replace Jupyter logo with ODOT Zephyr logo */
+#jp-MainLogo {
+  background-image: url('./odot-logo.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 50px;
+  height: 32px;
+  padding: 4px;
+}
+
+/* Hide the default Jupyter SVG logo */
+#jp-MainLogo svg {
+  display: none;
+}
+
+/* Fix toolbar buttons to use Tech Blue instead of green */
+.jp-Toolbar-item .jp-ToolbarButtonComponent {
+  color: var(--jp-ui-font-color1);
+}
+
+.jp-Toolbar-item .jp-ToolbarButtonComponent:hover {
+  background-color: rgba(0, 152, 211, 0.1); /* Tech Blue hover */
+}
+
+.jp-Toolbar-item .jp-ToolbarButtonComponent.jp-mod-highlighted {
+  background-color: rgba(0, 152, 211, 0.2); /* Tech Blue active */
+  color: #0098D3; /* Tech Blue text */
+}
+
+/* Specifically target the New Launcher and Console buttons */
+button[title*="New Launcher"],
+button[title*="New Console"],
+.jp-AddIcon {
+  color: #0098D3 !important; /* Tech Blue */
+}
+
+button[title*="New Launcher"]:hover,
+button[title*="New Console"]:hover {
+  background-color: rgba(0, 152, 211, 0.15) !important;
+}

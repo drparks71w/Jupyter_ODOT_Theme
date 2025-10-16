@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "declaration": true,
+    "esModuleInterop": true,
+    "lib": [
+      "es2018",
+      "dom"
+    ],
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "noEmitOnError": true,
+    "noUnusedLocals": true,
+    "outDir": "lib",
+    "rootDir": "src",
+    "strict": true,
+    "target": "es2017",
+    "skipLibCheck": true
+  },
+  "include": [
+    "src/*"
+  ]
+}
